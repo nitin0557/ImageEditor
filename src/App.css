@@ -2,7 +2,7 @@
   text-align: center;
   font-family: Arial, sans-serif;
 }
-canvas {
+/* canvas {
   border: 1px solid black;
 
 }
@@ -13,9 +13,9 @@ canvas {
 
 .search-box {
   margin: 20px;
-}
+} */
 
-.image-grid {
+/* .image-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -61,4 +61,4 @@ canvas {
   color: white;
   border: none;
   cursor: pointer;
-}
+} */

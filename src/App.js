@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SearchPage from './components/SearchPage';
-import AddCaptionPage from './components/AddCaptionPage';
 import './App.css';
+
+const SearchPage = lazy(() => import('./components/SearchPage'));
+const AddCaptionPage = lazy(() => import('./components/AddCaptionPage/AddCaptionPage'));
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Routes>
-          <Route path="/ImageEditor" element={<SearchPage />} />
-          <Route path="/add-caption/:imageId" element={<AddCaptionPage />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/ImageEditor" element={<SearchPage />} />
+            <Route path="/add-caption/:imageId" element={<AddCaptionPage />} />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );
