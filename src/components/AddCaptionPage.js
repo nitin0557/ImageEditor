@@ -154,12 +154,13 @@ function AddCaptionPage() {
 
   return (
     <div className="caption-page">
-      {error && <div className="error-message">{error}</div>}
-
+    {error && <div className="error-message">{error}</div>}
+  
+    <div className="main-container">
       <div className="image-container">
         <canvas ref={canvasRef} id="canvas" />
       </div>
-
+  
       <div className="controls-container">
         <input
           type="text"
@@ -173,10 +174,15 @@ function AddCaptionPage() {
         <button onClick={() => addShape('circle')}>Add Circle</button>
         <button onClick={() => addShape('rectangle')}>Add Rectangle</button>
         <button onClick={() => addShape('polygon')}>Add Polygon</button>
-        <button onClick={downloadCanvas}>Download</button>
-        <button onClick={logCanvasLayers}>Log Canvas Layers</button>
       </div>
     </div>
+  
+    <div className="download-button">
+      <button onClick={downloadCanvas}>Download</button>
+      <button onClick={logCanvasLayers}>Log Canvas Layers</button>
+    </div>
+  </div>  
+  
   );
 }
 

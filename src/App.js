@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<SearchPage />} />
+          <Route path="/ImageEditor" element={<SearchPage />} />
           <Route path="/add-caption/:imageId" element={<AddCaptionPage />} />
         </Routes>
       </div>
